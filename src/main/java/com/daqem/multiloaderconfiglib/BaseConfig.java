@@ -36,7 +36,7 @@ public abstract class BaseConfig {
         try {
             fillConfigFile();
         } catch (FileNotFoundException e) {
-            MultiLoaderConfig.LOGGER.error("Config file for {} doesn't exist.", getFullConfigPath());
+            MultiLoaderConfigLib.LOGGER.error("Config file for {} doesn't exist.", getFullConfigPath());
             e.printStackTrace();
         }
         deserializeConfig(getConfigFileAsJson());
@@ -46,7 +46,7 @@ public abstract class BaseConfig {
         try {
             Files.createDirectories(getConfigFileDirectoryPath());
         } catch (IOException e) {
-            MultiLoaderConfig.LOGGER.error("Cannot create config folder(s).");
+            MultiLoaderConfigLib.LOGGER.error("Cannot create config folder(s).");
             e.printStackTrace();
         }
     }
@@ -55,13 +55,13 @@ public abstract class BaseConfig {
         configFile = getFullConfigPath();
         try {
             if (configFile.createNewFile()) {
-                MultiLoaderConfig.LOGGER.debug("Created {} config file.", configType);
+                MultiLoaderConfigLib.LOGGER.debug("Created {} config file.", configType);
             } else {
-                MultiLoaderConfig.LOGGER.debug("{} config already exists.", configType);
-                MultiLoaderConfig.LOGGER.debug("Config file length: {}", configFile.length());
+                MultiLoaderConfigLib.LOGGER.debug("{} config already exists.", configType);
+                MultiLoaderConfigLib.LOGGER.debug("Config file length: {}", configFile.length());
             }
         } catch (IOException e) {
-            MultiLoaderConfig.LOGGER.error("Cannot create config file.");
+            MultiLoaderConfigLib.LOGGER.error("Cannot create config file.");
             e.printStackTrace();
         }
     }
@@ -137,7 +137,7 @@ public abstract class BaseConfig {
             writer.flush();
             writer.close();
         } catch (IOException e) {
-            MultiLoaderConfig.LOGGER.error("Failed to save {} config file.", configType);
+            MultiLoaderConfigLib.LOGGER.error("Failed to save {} config file.", configType);
             e.printStackTrace();
         }
     }

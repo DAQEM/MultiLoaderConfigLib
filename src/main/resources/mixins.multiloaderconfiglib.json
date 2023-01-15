@@ -4,8 +4,10 @@
   "package": "com.daqem.multiloaderconfiglib.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "MinecraftServerMixin"
   ],
   "client": [
+    "MainMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -9,7 +9,7 @@ import org.slf4j.Logger;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MultiLoaderConfig {
+public class MultiLoaderConfigLib {
 
     public static final Logger LOGGER = LogUtils.getLogger();
 
